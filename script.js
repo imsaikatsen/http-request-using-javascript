@@ -31,7 +31,7 @@ const sendRequest = function(method,url,data){
 
 const getData = function(){
 
-    sendRequest("GET","https://jsonplaceholder.typicode.com/todos/1")
+    sendRequest("GET","https://jsonplaceholder.typicode.com/todos")
     .then(responseData => {
         console.log(responseData);
     }).catch(err => {
