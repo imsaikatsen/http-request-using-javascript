@@ -33,7 +33,18 @@ const getData = function(){
 
     sendRequest("GET","https://jsonplaceholder.typicode.com/todos")
     .then(responseData => {
-        console.log(responseData);
+        // console.log(responseData);
+
+        var table = document.getElementById('myTable')
+        for(var i = 0; i< responseData.length; i++){
+            var row =  `<tr>
+                            <td>${responseData[i].userId}</td>
+                            <td>${responseData[i].id}</td>
+                            <td>${responseData[i].title}</td>
+                            <td>${responseData[i].completed}</td>
+                        </tr>`
+                        table.innerHTML += row
+        }
     }).catch(err => {
         console.log(err);
     })
